@@ -7,6 +7,7 @@ constructor () {
   super ()
     this.state = {
       countries: [],
+      searchfield: '',
     }
   
 }

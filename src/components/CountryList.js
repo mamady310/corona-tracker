@@ -2,7 +2,7 @@ import React from 'react';
 import Countries from './Countries';
 
 
-const CountryList = ({ countries}) => {
+const CountryList = ({ countries }) => {
     return (
      <div>
          {
