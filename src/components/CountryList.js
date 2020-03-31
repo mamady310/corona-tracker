@@ -1,4 +1,6 @@
 import React from 'react';
+import Countries from './Countries';
+
 
 const CountryList = ({ countries}) => {
     return (
@@ -6,7 +8,7 @@ const CountryList = ({ countries}) => {
          {
           countries.map((user, i) => {
               return (
-                  <Country
+                  <Countries
                   key={i}
                   name={countries[i].Country}
                   confirmed={countries[i].TotalConfirmed}
@@ -19,4 +21,4 @@ const CountryList = ({ countries}) => {
      </div>
     );
 }
-export default CountryList
+export default CountryList;
