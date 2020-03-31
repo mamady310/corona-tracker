@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import CountryList from '../components/CountryList';
+import SearchBox from '../components/SearchBox';
 
 import '../containers/App.css';
 
@@ -7,7 +9,7 @@ constructor () {
   super ()
     this.state = {
       countries: [],
-      searchfield: '',
+      searchfield: ''
     }
   
 }
@@ -25,8 +27,17 @@ onSearchChange = (event) => {
   this.setState({searchfield: event.target.value})
 }
 render () {
+  const { countries, searchfield } = this.state;
+  const filteredCountries = countries.filter(news =>{
+    return news.Country.toLowerCase().includes
+    (searchfield.toLocaleLowerCase());
+  })
+
   return (
     <div> 
+      <h1>Corona Virus Tracker</h1>
+      <SearchBox searchChange={this.onSearchChange}/>
+      <CountryList countries={filteredCountries}/>
    
     </div>
 
@@ -34,5 +45,5 @@ render () {
 }
 }
 
-export default App
+export default App;
 
