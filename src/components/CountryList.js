@@ -3,17 +3,20 @@ import Countries from './Countries';
 
 
 const CountryList = ({ countries }) => {
+    console.log('countriesList', countries )
     return (
      <div>
          {
-          countries.map((user, i) => {
+          countries.map((info, i) => {
               return (
                   <Countries
                   key={i}
-                  name={countries[i].Country}
-                  confirmed={countries[i].TotalConfirmed}
-                  deaths={countries[i].TotalDeaths}
-                  recovered={countries[i].TotalRecovered}
+                  Country={info.Country}
+                  Date={info.Date}
+                  TotalConfirmed={info.TotalConfirmed}
+                  TotalDeaths={info.TotalDeaths}
+                  TotalRecovered={info.TotalRecovered}
+
                 />  
               );
           })
